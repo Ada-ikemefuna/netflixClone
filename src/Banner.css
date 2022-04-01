@@ -2,11 +2,11 @@
 
 .banner{
     /* background: url(./img/original.jpg) no-repeat center/cover; */
-    margin-top: 4.7rem;
+    margin-top: 0rem;
     padding: 2rem 0 0 0;
     color: white;
     font-family: 'Montserrat', sans-serif;
-    height: 20rem;
+    height: 25rem;
 
 }
 
@@ -44,7 +44,7 @@
 }
 
 .banner_fade{
-    height:7.4rem;
+    height:10rem;
     background-image: linear-gradient(
         180deg,
         transparent,

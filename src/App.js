@@ -5,10 +5,27 @@ import requests from './requests';
 import axios from './axios';
 import Banner from './Banner';
 import Row from './Row';
+import Loader from './Loader';
+import { useEffect, useState } from 'react';
 function App() {
+  const [loading, setLoading] = useState(true)
+
+  useEffect( () => {
+
+    setTimeout(() => {
+      setLoading(false)
+    },3000)
+
+}, []);
+  
+  
+
   return (
     <div className="App">
-      <Navbar />
+      {
+        loading?(<Loader/>):(
+          <>
+          <Navbar />
       <Banner />
       <Row
         title="Netflix Originals"
@@ -21,8 +38,13 @@ function App() {
       <Row title="Horror Movies" fetchUrl={requests.fetchHorror} />
       <Row title="Romance Movies" fetchUrl={requests.fetchRomance} />
       <Row title="Documentaries" fetchUrl={requests.fetchDocumentaries} />
+          </>
+
+        )
+      }
+     
     </div>
-  );
+  ); 
 }
 
 export default App;
